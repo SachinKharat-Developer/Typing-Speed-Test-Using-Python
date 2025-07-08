@@ -22,29 +22,33 @@ input()
 start_time = time.time()
 
 # User input
-typed = input("Start typing:\n")
+typed = input("Start typing:\n").strip()
 
 # End time
 end_time = time.time()
 
 # Time taken
-time_taken = end_time - start_time
-time_taken = round(time_taken, 2)
+time_taken = round(end_time - start_time, 2)
 
-# Speed calculation
-words = len(typed.split())
-wpm = round((words / time_taken) * 60)
+# Handle empty input
+if not typed:
+    print("\n❗ You didn't type anything. Please try again.")
+else:
+    # Split words
+    typed_words = typed.split()
+    sentence_words = sentence.split()
 
-# Accuracy calculation
-correct_chars = 0
-for i in range(min(len(sentence), len(typed))):
-    if sentence[i] == typed[i]:
-        correct_chars += 1
+    # Count correct words
+    correct_words = sum(1 for tw, sw in zip(typed_words, sentence_words) if tw == sw)
 
-accuracy = round((correct_chars / len(sentence)) * 100, 2)
+    # Calculate accuracy
+    accuracy = round((correct_words / len(sentence_words)) * 100, 2)
 
-# Results
-print("\n--- Results ---")
-print(f"Time Taken     : {time_taken} seconds")
-print(f"Typing Speed   : {wpm} WPM")
-print(f"Accuracy       : {accuracy}%")
+    # Calculate speed based on correct words only
+    wpm = round((correct_words / time_taken) * 60) if time_taken > 0 else 0
+
+    # Output results
+    print("\n--- Results ---")
+    print(f"Time Taken     : {time_taken} seconds")
+    print(f"Typing Speed   : {wpm} WPM")
+    print(f"Accuracy       : {accuracy}%")
