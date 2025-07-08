@@ -1,22 +1,19 @@
 # ⌨️ Typing Speed Test – Console Version (Python)
 
-A simple and effective **console-based Typing Speed Test** application written in Python.  
-It helps you measure your typing performance by calculating:
-
-- 🕒 Time Taken (in seconds)
-- ⚡ Words Per Minute (WPM)
-- 🎯 Typing Accuracy (in %)
+A simple yet accurate **Typing Speed Test** built using **pure Python** in the console.  
+It measures how fast and accurately you can type a randomly selected sentence.
 
 ---
 
 ## 🚀 Features
 
-- Random sentence displayed for each test
-- Timer starts when you begin typing
-- Calculates:
-  - Typing Speed (WPM)
-  - Accuracy (%)
-  - Time Taken
-- Clean and minimal command-line interface
+- ✅ Random sentence display for each test
+- ✅ Real-time timer starts with typing
+- ✅ Accurate WPM (Words Per Minute) calculation based on correct words
+- ✅ Word-based accuracy checking
+- ✅ Handles empty input or incorrect attempts
+- ✅ Clean and beginner-friendly command-line interface
 
 ---
+
+
